@@ -6,13 +6,15 @@ term1_courses_dict = {
         "instructor": "David Chen",
         "course_code": "CISA 1350",
         "learnhub_url": base_url + "1161551",
-        "course_outline_url": base_outline_url + "20253045231/"
+        "course_outline_url": base_outline_url + "20253045231/",
+        "course_outline_path": "",
     },
     "Networking": {
         "instructor": "Jingjing Lount",
         "course_code": "CISA 1310",
         "learnhub_url": base_url + "1161535",
         "course_outline_url": base_outline_url + "20253045225/",
+        "course_outline_path": "",
         "netacad_url": "https://www.netacad.com/launch?id=457802b1-70bf-4bb7-8303-ee4c80b32826",
     },
     "Desktop": {
@@ -28,12 +30,14 @@ term1_courses_dict = {
         "course_code": "CISA 1340",
         "learnhub_url": base_url + "1161546",
         "course_outline_url": base_outline_url + "20253045229/",
+        "course_outline_path": "",
         "redhat_url": "https://rha.ole.redhat.com/rha/app/summary"
     },
     "Python": {
         "instructor": "John Ali",
         "course_code": "CISA 1360",
         "learnhub_url": base_url + "1161556",
+        "course_outline_path": "",
         "course_outline_url": base_outline_url + "20253045233/",
     },
     "Server": {
