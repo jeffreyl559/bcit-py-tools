@@ -106,7 +106,8 @@ class MainApplication():
         """ Open popup containing instructor email and office location & hours """
         dialog = tk.Toplevel(self.window)
         dialog.title("Instructor Contact and Office Hours")
-        dialog.transient(self.window) # Make it modal relative to the root window
+        # Make it modal relative to the root window
+        dialog.transient(self.window)
         dialog.grab_set()  # Prevent interaction with other windows
         dialog.focus()
         label = ttk.Label(
@@ -119,6 +120,9 @@ class MainApplication():
 
         ok_button = ttk.Button(dialog, text="OK", command=dialog.destroy)
         ok_button.pack()
+        ok_button.focus_set()
+        ok_button.bind("<Return>", lambda event: ok_button.invoke())
+        ok_button.bind("<Escape>", lambda event: ok_button.invoke())
 
         self.center_window(dialog)
         self.window.wait_window(dialog)  # Wait until the dialog is closed
