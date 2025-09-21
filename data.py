@@ -1,5 +1,5 @@
-base_url = "https://learn.bcit.ca/d2l/home/"
-base_outline_url = "https://www.bcit.ca/outlines/"
+BASE_URL = "https://learn.bcit.ca/d2l/home/"
+BASE_OUTLINE_URL = "https://www.bcit.ca/outlines/"
 
 term1_courses_dict = {
     "Database": {
@@ -7,8 +7,8 @@ term1_courses_dict = {
         "email": "david_chen@bcit.ca",
         "office_hours": "SE1-135 Weekdays 12:00-3:00PM, by appointment",
         "course_code": "CISA 1350",
-        "learnhub_url": base_url + "1161551",
-        "course_outline_url": base_outline_url + "20253045231/",
+        "learnhub_url": BASE_URL + "1161551",
+        "course_outline_url": BASE_OUTLINE_URL + "20253045231/",
         "course_outline_path": "",
         "alt_platform_url": "https://portal.azure.com/",
         "alt_platform_name": "Azure Portal",
@@ -18,8 +18,8 @@ term1_courses_dict = {
         "email": "jlount@bcit.ca",
         "office_hours": "SE1-123A by appointment, SE6-105 Mon, Wed 3-6PM (probably email anyway to check availability)",
         "course_code": "CISA 1310",
-        "learnhub_url": base_url + "1161535",
-        "course_outline_url": base_outline_url + "20253045225/",
+        "learnhub_url": BASE_URL + "1161535",
+        "course_outline_url": BASE_OUTLINE_URL + "20253045225/",
         "course_outline_path": "",
         "alt_platform_url": "https://www.netacad.com/launch?id=457802b1-70bf-4bb7-8303-ee4c80b32826",
         "alt_platform_name": "Netacad"
@@ -29,7 +29,7 @@ term1_courses_dict = {
         "email": "Joutiar_ghaderyan@bcit.ca",
         "office_hours": "SE1-123 Weekdays 8:30AM-3PM",
         "course_code": "CISA 1320",
-        "learnhub_url": base_url + "1161509",
+        "learnhub_url": BASE_URL + "1161509",
         "course_outline_url": "",
         "course_outline_path": "course_outlines/term1/desktop_outline.pdf",
         "alt_platform_url": "https://platform.comptia.org/v6_0_692/index.html/my-courses",
@@ -40,8 +40,8 @@ term1_courses_dict = {
         "email": "Steven_Ng@bcit.ca",
         "office_hours": "Email to setup meeting on Teams >.>",
         "course_code": "CISA 1340",
-        "learnhub_url": base_url + "1161546",
-        "course_outline_url": base_outline_url + "20253045229/",
+        "learnhub_url": BASE_URL + "1161546",
+        "course_outline_url": BASE_OUTLINE_URL + "20253045229/",
         "course_outline_path": "",
         "alt_platform_url": "https://rha.ole.redhat.com/rha/app/summary",
         "alt_platform_name": "Redhat Academy",
@@ -51,9 +51,9 @@ term1_courses_dict = {
         "email": "zali39@bcit.ca",
         "office_hours": "SE1-208A Email to setup appointment",
         "course_code": "CISA 1360",
-        "learnhub_url": base_url + "1161556",
+        "learnhub_url": BASE_URL + "1161556",
         "course_outline_path": "",
-        "course_outline_url": base_outline_url + "20253045233/",
+        "course_outline_url": BASE_OUTLINE_URL + "20253045233/",
         "alt_platform_url": "",
         "alt_platform_name": "",
     },
@@ -62,7 +62,7 @@ term1_courses_dict = {
         "email": "tracy_willcock@bcit.ca",
         "office_hours": "SE1-135 By appointment",
         "course_code": "CISA 1330",
-        "learnhub_url": base_url + "1161512",
+        "learnhub_url": BASE_URL + "1161512",
         "course_outline_url": "",
         "course_outline_path": "course_outlines/term1/server_outline.pdf",
         "alt_platform_url": "https://labs.xtremelabs.io/LabMenu/?track=BCIT-Win%20Server%20Essentials-2022",

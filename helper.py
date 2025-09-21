@@ -1,3 +1,4 @@
+""" Module providing generic functions for opening links in browsers or PDF reader """
 
 import webbrowser
 import os
@@ -21,14 +22,15 @@ def open_link_in_browser(url) -> None:
 
     if chrome_path:
         try:
-            subprocess.Popen([chrome_path, url])
-        except Exception as e:
+            subprocess.Popen([chrome_path, url]) # pylint: disable=consider-using-with
+        except Exception as e: # pylint: disable=broad-exception-caught
             print(f"Failed to open Chrome: {e}")
     else:
         print("Chrome executable not found, using default browser")
         try:
-            webbrowser.open(url, new=2)  # new=2 opens in a new tab, if possible. By default autoraise == True
-        except Exception as e:
+            # new=2 opens in a new tab, if possible. By default autoraise == True
+            webbrowser.open(url, new=2) 
+        except Exception as e: # pylint: disable=broad-exception-caught
             print(f"Failed to open browser: {e}")
 
 
