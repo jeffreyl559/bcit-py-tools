@@ -106,9 +106,9 @@ class MainApplication():
         """ Open popup containing instructor email and office location & hours """
         dialog = tk.Toplevel(self.window)
         dialog.title("Instructor Contact and Office Hours")
-        # Make it modal relative to the root window
-        dialog.transient(self.window)
-        dialog.grab_set()  # Grab focus and prevent interaction with other windows
+        dialog.transient(self.window) # Make it modal relative to the root window
+        dialog.grab_set()  # Prevent interaction with other windows
+        dialog.focus()
         label = ttk.Label(
             dialog, text=f"Email: {info["email"]}\nOffice Hours: {info["office_hours"]}")
         label.pack(padx=15, pady=10)
