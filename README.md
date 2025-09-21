@@ -2,7 +2,7 @@
 
 ## Quick Start
 
-To run, install Python 3 and double-click app.pyw. If you are promopted to select an app to open the file, select Python and click Always. You can change the default app for .pyw files later by right clicking on a .pyw file and clicking Change next to the "Opens with" section. 
+To run, install Python 3 and double-click app.pyw. If you are prompted to select an app to open the file, select Python and click Always. You can change the default app for .pyw files later by right clicking on a .pyw file and clicking Change next to the "Opens with" section. 
 
 For ease of use, you can create a shortcut on the desktop by right clicking app.pyw, hover over Send to, and click Desktop (create shortcut).
 
