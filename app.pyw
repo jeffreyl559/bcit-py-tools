@@ -9,6 +9,7 @@ class MainApplication():
     # Constructor, ran automatically when an new object of a class is created. Initial state set.
     def __init__(self) -> None:
         self.window = tk.Tk()
+        self.window.withdraw() # Hide window until later
         self.window.title("CISA Stuff")
         logo = PhotoImage(file="assets/desktop.png")
         self.window.iconphoto(False, logo)
@@ -34,10 +35,12 @@ class MainApplication():
         self.password = "costco"
         self.bind_events()
 
-        self.center_window(self.window)
-
-        # Tkinter event loop - Keeps window open, listens for interaction, updates GUI
-        self.window.mainloop()
+        self.window.update_idletasks()
+         # Schedule a callback on center_window after 0 seconds (so as soon as Tkinter has finished its tasks and drawn widgets)
+        self.window.after(0, lambda: self.center_window(self.window))
+        self.window.deiconify() # Restore window hidden with withdraw()
+        
+        self.window.mainloop()        # Tkinter event loop - Keeps window open, listens for interaction, updates GUI
 
     def create_course_frame(self, parent_frame, course_name: str, course_info: dict) -> tk.Frame:
         """ Create frame for course """
@@ -87,20 +90,28 @@ class MainApplication():
 
     def center_window(self, window) -> None:
         """ Center window horizontally and vertically """
-        window.update_idletasks()  # Update geometry
+        window.update_idletasks()
 
-        # Get screen size after widgets are drawn
+        # Measure actual size
+        width = window.winfo_width()
+        height = window.winfo_height()
+
+        # Fallback if the measured size is too small
+        if width <= 1 or height <= 1:
+            width = window.winfo_reqwidth()
+            height = window.winfo_reqheight()
+
+        # Get screen size
         screen_width = window.winfo_screenwidth()
         screen_height = window.winfo_screenheight()
 
-        # Get window size
-        window_width = window.winfo_width()
-        window_height = window.winfo_height()
+        # Compute top-left coordinates for centering
+        x = (screen_width // 2) - (width // 2)
+        y = (screen_height // 2) - (height // 2)
 
-        x = (screen_width // 2) - (window_width // 2)
-        y = (screen_height // 2) - (window_height // 2)
+        # Set geometry including the width and height
+        window.geometry(f"{width}x{height}+{x}+{y}")
 
-        window.geometry(f"+{x}+{y}")
 
     def open_popup(self, info) -> None:
         """ Open popup containing instructor email and office location & hours """
@@ -111,7 +122,7 @@ class MainApplication():
         dialog.grab_set()  # Prevent interaction with other windows
         dialog.focus()
         label = ttk.Label(
-            dialog, text=f"Email: {info["email"]}\nOffice Hours: {info["office_hours"]}")
+            dialog, text=f"Email: {info['email']}\nOffice Hours: {info['office_hours']}")
         label.pack(padx=15, pady=10)
 
         label2 = ttk.Label(
