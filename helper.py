@@ -1,5 +1,5 @@
 
-# import webbrowser
+import webbrowser
 import os
 import subprocess
 import sys
@@ -8,9 +8,7 @@ import sys
 def open_chrome(url):
     chrome_path = None
 
-    # Attempt to locate the Chrome executable (platform dependent)
     if sys.platform.startswith('win'):
-        # Windows paths (you can modify/add more if needed)
         possible_paths = [
             "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
             "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
@@ -19,12 +17,6 @@ def open_chrome(url):
             if os.path.exists(path):
                 chrome_path = path
                 break
-    elif sys.platform.startswith('darwin'):
-        # macOS
-        chrome_path = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-    elif sys.platform.startswith('linux'):
-        # Linux (assuming Chrome is in PATH)
-        chrome_path = "google-chrome"
 
     # Open the URL in Chrome
     if chrome_path:
@@ -33,7 +25,11 @@ def open_chrome(url):
         except Exception as e:
             print(f"Failed to open Chrome: {e}")
     else:
-        print("Chrome executable not found.")
+        print("Chrome executable not found, using default browser")
+        try:
+            webbrowser.open(url, new=2)  # new=2 opens in a new tab, if possible. By default autoraise == True
+        except Exception as e:
+            print(f"Failed to open browser: {e}")
 
 
 def open_pdf(relative_path):
@@ -43,5 +39,5 @@ def open_pdf(relative_path):
     if not os.path.exists(pdf_path):
         print("PDF not found:", pdf_path)
         return
-    
+
     os.startfile(pdf_path)
