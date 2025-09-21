@@ -5,7 +5,8 @@ import subprocess
 import sys
 
 
-def open_chrome(url):
+def open_link_in_browser(url) -> None:
+    """ Open link in Chrome or default browser """
     chrome_path = None
 
     if sys.platform.startswith('win'):
@@ -18,7 +19,6 @@ def open_chrome(url):
                 chrome_path = path
                 break
 
-    # Open the URL in Chrome
     if chrome_path:
         try:
             subprocess.Popen([chrome_path, url])
@@ -32,7 +32,8 @@ def open_chrome(url):
             print(f"Failed to open browser: {e}")
 
 
-def open_pdf(relative_path):
+def open_pdf(relative_path) -> None:
+    """ Open PDF """
     base_dir = os.path.dirname(os.path.abspath(__file__))
     pdf_path = os.path.join(base_dir, relative_path)
 
